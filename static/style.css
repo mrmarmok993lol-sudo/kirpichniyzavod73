@@ -322,6 +322,9 @@ nav li:first-child{
 }
 
 @media (max-width: 600px) {
+    .hideOnMobile{
+        display: none;
+    }
     .catalog-btn {
         font-size: 16px;
         padding: 10px 18px;
@@ -383,5 +386,6 @@ nav li:first-child{
         flex-direction: column; /* чтобы ссылки шли вниз */
     }
 }
+
 
 
