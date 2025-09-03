@@ -331,9 +331,6 @@ nav li:first-child{
     }
 }
 @media(max-width: 800px){
-    .hideOnMobile{
-        display: none;
-    }
     .menu-btn{
         display:block;
     }
@@ -386,4 +383,5 @@ nav li:first-child{
         flex-direction: column; /* чтобы ссылки шли вниз */
     }
 }
+
 
