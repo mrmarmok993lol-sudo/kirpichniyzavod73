@@ -11,22 +11,22 @@
     <nav>
         <ul class="sidebar">
             <li onClick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="{{ url_for('about') }}">О нас</a></li>
-            <li><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
+            <li class="hideOnMobile"><a href="about.html">О нас</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Сделать заказ</a></li>
         </ul>
         <ul>
             <li><a href="{{ url_for('home') }}">Кирпичный Завод 73</a></li>
-            <li class="hideOnMobile"><a href="{{ url_for('about') }}">О нас</a></li>
-            <li class="hideOnMobile"><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
+            <li class="hideOnMobile"><a href="about.html">О нас</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Сделать заказ</a></li>
             <li class="menu-btn" onClick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
     </nav>
 
     <h1>Кирпичи для надежного строительства</h1>
     <div class="image-gallery">
-        <img class="images" src="{{ url_for('static', filename='images/bc68f369bf75ffdadb8334f3500afb5d.jpeg') }}" alt="brick-house">
-        <img class="images" src="{{ url_for('static', filename='images/14685038138G4DH_1920_0_tl_normal.jpg') }}" alt="brick-house">
-        <img class="images" src="{{ url_for('static', filename='images/272679-dom-iz-klinkernogo-kirpicha-7.jpg') }}" alt="brick-house">
+        <img class="images" src="static/images/bc68f369bf75ffdadb8334f3500afb5d.jpeg'" alt="brick-house">
+        <img class="images" src="static/images/14685038138G4DH_1920_0_tl_normal.jpg" alt="brick-house">
+        <img class="images" src="static/images/272679-dom-iz-klinkernogo-kirpicha-7.jpg" alt="brick-house">
     </div>
     <p class="slogan">Прямые поставки. Качество. Надежность.</p>
 
@@ -109,4 +109,5 @@
 </body>
 
 </html>
+
 
