@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatiblr" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирпичный Завод 73</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-index">
+    <nav>
+        <ul class="sidebar">
+            <li onClick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="{{ url_for('about') }}">О нас</a></li>
+            <li><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
+        </ul>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Кирпичный Завод 73</a></li>
+            <li class="hideOnMobile"><a href="{{ url_for('about') }}">О нас</a></li>
+            <li class="hideOnMobile"><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
+            <li class="menu-btn" onClick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+    <h1>Кирпичи для надежного строительства</h1>
+    <div class="image-gallery">
+        <img class="images" src="{{ url_for('static', filename='images/bc68f369bf75ffdadb8334f3500afb5d.jpeg') }}" alt="brick-house">
+        <img class="images" src="{{ url_for('static', filename='images/14685038138G4DH_1920_0_tl_normal.jpg') }}" alt="brick-house">
+        <img class="images" src="{{ url_for('static', filename='images/272679-dom-iz-klinkernogo-kirpicha-7.jpg') }}" alt="brick-house">
+    </div>
+    <p class="slogan">Прямые поставки. Качество. Надежность.</p>
+
+    <div class="catalog-btn-container">
+        <hr class="catalog-btn-line">
+        <a href="#catalog" class="catalog-btn">Перейти к каталогу</a>
+        <hr class="catalog-btn-line">
+    </div>
+
+    <h2>Мы — команда, которая делает строительство проще.</h2>
+    <p>У нас вы найдёте кирпич для любых задач: от частного дома до крупного объекта. Честные цены, быстрые поставки и гарантия качества.</p>
+
+    <h4>Каталог товаров</h4>
+    <div id="catalog" class="catalog">
+        <div class="catalog-item">      
+            <img src="{{ url_for('static', filename='images/1br.jpg') }}" alt="Облицовочный кирпич">
+            <h3>Облицовочный кирпич</h3>
+            <p>так и написано облицованный кирпич</p>
+            <span class="price">от 25 ₽/шт</span>
+            <a href="{{ url_for('contact') }}" class="btn">Заказать</a>
+        </div>
+
+        <div class="catalog-item">
+            <img src="{{ url_for('static', filename='images/2br.jpg') }}" alt="Красный кирпич">
+            <h3>Кирпичная сумка</h3>
+            <p>Удобно, но тяжело подбирать туфельки</p>
+            <span class="price">от 18 ₽/шт</span>
+            <a href="{{ url_for('contact') }}" class="btn">Заказать</a>
+        </div>
+
+        <div class="catalog-item">
+            <img src="{{ url_for('static', filename='images/3br.jpg') }}" alt="Белый кирпич">
+            <h3>Смирившийся кирпич или Кирпич курильщика</h3>
+            <p>Подходит для бесконечных разговоров. Он уже жил на миллионов триллиардах таких же планет</p>
+            <span class="price">от 20 ₽/шт</span>
+            <a href="{{ url_for('contact') }}" class="btn">Заказать</a>
+         </div>
+
+        <div class="catalog-item">
+            <img src="{{ url_for('static', filename='images/4br.jpg') }}" alt="Клинкерный кирпич">
+            <h3>BMW M1</h3>
+            <p>Максимальная прочность и долговечность. Первая и последняя бмв которая не требует сервиса</p>
+            <span class="price">от 30 ₽/шт</span>
+            <a href="{{ url_for('contact') }}" class="btn">Заказать</a>
+        </div>
+    </div>
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+        document.querySelector('.catalog-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.getElementById('catalog');
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 1200;
+            let start = null;
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const ease = progress / duration < 1 ? 1 - Math.pow(1 - progress / duration, 3) : 1;
+                window.scrollTo(0, startPosition + distance * ease);
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    window.scrollTo(0, targetPosition);
+                }
+            }
+            window.requestAnimationFrame(step);
+        });
+    </script>
+</body>
+</html>
