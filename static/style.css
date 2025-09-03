@@ -43,7 +43,7 @@ h1{
     border-radius: 10px;
 }
 .bg-about{
-    background-image: url(static/images/1748564283833.jpg);
+    background-image: url(images/1748564283833.jpg);
 }
 h2{
     text-align: center;
@@ -383,4 +383,5 @@ nav li:first-child{
     .sidebar{
         width: 100%;
     }
+
 }
