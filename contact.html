@@ -2,23 +2,23 @@
 <html lang="en">
 <head> 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA_Compatiblr" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Связаться с нами</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body class="bg-contact">
     <nav>
         <ul class="sidebar">
             <li onClick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="{{ url_for('about') }}">О нас</a></li>
-            <li><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
+            <li class="hideOnMobile"><a href="about.html">О нас</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Сделать заказ</a></li>
         </ul>
         <ul>
-            <li><a href="{{ url_for('home') }}">Кирпичный Завод 73</a></li>
-            <li class="hideOnMobile"><a href="{{ url_for('about') }}">О нас</a></li>
-            <li class="hideOnMobile"><a href="{{ url_for('contact') }}">Сделать заказ</a></li>
-            <li class="menu-btn" onClick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg> </a></li>
+            <li><a href="index.html">Кирпичный Завод 73</a></li>
+            <li class="hideOnMobile"><a href="about.html">О нас</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Сделать заказ</a></li>
+            <li class="menu-btn" onClick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
     </nav>
 
@@ -60,4 +60,5 @@
                 setTimeout(() => { status.textContent = ''; }, 1200);
             });
         }
+
     </script>
