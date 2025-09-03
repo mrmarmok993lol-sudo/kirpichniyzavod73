@@ -382,6 +382,8 @@ nav li:first-child{
 @media(max-width: 400px){
     .sidebar{
         width: 100%;
+        display: flex; /* чтобы sidebar отображался на мобильных */
+        flex-direction: column; /* чтобы ссылки шли вниз */
     }
-
 }
+
